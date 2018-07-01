@@ -68,7 +68,7 @@ black: ## run black to format your code
 
 test: ## run tests quickly with the default Python
 {%- if cookiecutter.use_pytest == 'y' %}
-	py.test
+	pytest
 {%- else %}
 	python -m unittest discover
 {%- endif %}
