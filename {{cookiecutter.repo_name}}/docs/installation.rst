@@ -12,7 +12,7 @@ To install {{ cookiecutter.project_name }}, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install {{ cookiecutter.repo_name }}
+    $ pip install {{ cookiecutter.project_slug }}
 
 This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
 
@@ -38,7 +38,7 @@ Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/tarball/master
+    $ curl  -OL https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/tarball/main
 
 Once you have a copy of the source, you can install it with:
 
@@ -48,4 +48,4 @@ Once you have a copy of the source, you can install it with:
 
 
 .. _Github repo: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
-.. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/tarball/master
+.. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/tarball/main
