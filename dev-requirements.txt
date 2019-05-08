@@ -19,7 +19,7 @@ jinja2-time==0.2.0        # via cookiecutter
 jinja2==2.10.1            # via cookiecutter, jinja2-time
 markupsafe==1.1.1         # via jinja2
 pathtools==0.1.2          # via watchdog
-pluggy==0.6.0             # via pytest, tox
+pluggy==0.11.0             # via pytest, tox
 poyo==0.4.2               # via cookiecutter
 py==1.8.0                 # via pytest, tox
 pytest-cookies==0.3.0
