@@ -23,7 +23,7 @@ pluggy==0.6.0             # via pytest, tox
 poyo==0.4.2               # via cookiecutter
 py==1.8.0                 # via pytest, tox
 pytest-cookies==0.3.0
-pytest==3.4.2
+pytest==4.4.2
 python-dateutil==2.8.0    # via arrow
 pyyaml==5.1               # via watchdog
 requests==2.21.0          # via cookiecutter
