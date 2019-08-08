@@ -24,6 +24,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+src/{{ cookiecutter.project_slug }}/_version.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -102,6 +103,3 @@ ENV/
 
 # mypy
 .mypy_cache/
-
-# setuptools_scm
-src/{{cookiecutter.project_slug}}/_version.py

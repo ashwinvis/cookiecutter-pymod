@@ -17,6 +17,15 @@ def make_symlink(filename, directory):
     )
 
 
+def git_init():
+    if not Path(".git").exists():
+        os.system("git init")
+        os.system("git add --all")
+        os.system('''git config user.email {{ cookiecutter.email|tojson }}''')
+        os.system('''git config user.name {{ cookiecutter.full_name|tojson }}''')
+        os.system("git commit -m 'First commit'")
+
+
 if __name__ == '__main__':
 
     if '{{ cookiecutter.create_author_file }}' != 'y':
@@ -44,4 +53,4 @@ if __name__ == '__main__':
     os.close(docs)
 
     if '{{ cookiecutter.initialize_git_repo }}' == 'y':
-
+        git_init()
