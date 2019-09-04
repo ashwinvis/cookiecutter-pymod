@@ -22,6 +22,6 @@ jobs:
         python -m pip install pip-tools
         make dev-requirements.txt
         python -m pip install -r dev-requirements.txt
-    - name: Test with tox
+    - name: Test with tox and Python ${{ matrix.python }}
       run: |
-        tox
+        tox -e ${{ matrix.python }}
