@@ -1,8 +1,10 @@
 # Cookiecutter PyPack
 
 [![Updates](https://pyup.io/repos/github/ashwinvis/cookiecutter-pypack/shield.svg)](https://pyup.io/repos/github/ashwinvis/cookiecutter-pypack/)
-
-[![image](https://travis-ci.org/ashwinvis/cookiecutter-pypack.svg?branch=master)](https://travis-ci.org/ashwinvis/cookiecutter-pypack)
+[![Travis build status](https://travis-ci.org/ashwinvis/cookiecutter-pypack.svg?branch=master)](https://travis-ci.org/ashwinvis/cookiecutter-pypack)
+[![Actions build Status](https://github.com/ashwinvis/cookiecutter-pypack/workflows/Python%20package/badge.svg)](https://github.com/ashwinvis/cookiecutter-pypack/actions)
+[![Windows build status on
+Appveyor](https://ci.appveyor.com/api/projects/status/github/ashwinvis/cookiecutter-pypack?branch=master&svg=true)](https://ci.appveyor.com/project/ashwinvis/cookiecutter-pypack/branch/master)
 
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template for a
 **Py**thon package with some **Mod**ern twists:
@@ -71,18 +73,6 @@ my-project/
   - Auto-release to [PyPI](https://pypi.python.org/pypi) when you push a
     new tag to master (optional)
   - Command line interface using Click (optional)
-
-## Build Status
-
-Linux:
-
-[![Linux build status on Travis
-CI](https://img.shields.io/travis/ashwinvis/cookiecutter-pypack.svg)](https://travis-ci.org/ashwinvis/cookiecutter-pypack)
-
-Windows:
-
-[![Windows build status on
-Appveyor](https://ci.appveyor.com/api/projects/status/github/ashwinvis/cookiecutter-pypack?branch=master&svg=true)](https://ci.appveyor.com/project/ashwinvis/cookiecutter-pypack/branch/master)
 
 ## Quickstart
 
