@@ -98,7 +98,7 @@ def test_bake_with_defaults(cookies):
 def test_bake_and_run_tests(cookies):
     with bake_in_temp_dir(cookies) as result:
         assert result.project.isdir()
-        run_inside_dir('python setup.py test', str(result.project)) == 0
+        run_inside_dir('tox -e py flake', str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
 
 
@@ -119,14 +119,14 @@ def test_bake_withspecialchars_and_run_tests(cookies):
     """Ensure that a `full_name` with double quotes does not break setup.py"""
     with bake_in_temp_dir(cookies, extra_context={'full_name': 'name "quote" name'}) as result:
         assert result.project.isdir()
-        run_inside_dir('python setup.py test', str(result.project)) == 0
+        run_inside_dir('tox -e py', str(result.project)) == 0
 
 
 def test_bake_with_apostrophe_and_run_tests(cookies):
     """Ensure that a `full_name` with apostrophes does not break setup.py"""
     with bake_in_temp_dir(cookies, extra_context={'full_name': "O'connor"}) as result:
         assert result.project.isdir()
-        run_inside_dir('python setup.py test', str(result.project)) == 0
+        run_inside_dir('tox -e py', str(result.project)) == 0
 
 
 # def test_bake_and_run_travis_pypi_setup(cookies):
@@ -136,7 +136,7 @@ def test_bake_with_apostrophe_and_run_tests(cookies):
 #
 #         # when:
 #         travis_setup_cmd = ('python travis_pypi_setup.py'
-#                             ' --repo audreyr/cookiecutter-pypackage --password invalidpass')
+#                             ' --repo ashwinvis/cookiecutter-pypack --password invalidpass')
 #         run_inside_dir(travis_setup_cmd, project_path)
 #         # then:
 #         result_travis_config = yaml_load(result.project.join(".travis.yml").open())
@@ -163,11 +163,6 @@ def test_bake_without_author_file(cookies):
         docs_index_path = result.project.join('docs/index.rst')
         with open(str(docs_index_path)) as index_file:
             assert 'contributing\n   history' in index_file.read()
-
-        # Check that
-        manifest_path = result.project.join('MANIFEST.in')
-        with open(str(manifest_path)) as manifest_file:
-            assert 'AUTHORS.md' not in manifest_file.read()
 
 
 def test_make_help(cookies):
@@ -227,7 +222,7 @@ def test_not_using_pytest(cookies):
 #
 #     # when:
 #     travis_setup_cmd = ('python travis_pypi_setup.py'
-#                         ' --repo audreyr/cookiecutter-pypackage --password invalidpass')
+#                         ' --repo ashwinvis/cookiecutter-pypack --password invalidpass')
 #     run_inside_dir(travis_setup_cmd, project_path)
 #
 #     # then:
@@ -245,7 +240,7 @@ def test_bake_with_no_console_script(cookies):
 
     setup_path = os.path.join(project_path, 'setup.cfg')
     with open(setup_path, 'r') as setup_file:
-        assert 'entry_points' not in setup_file.read()
+        assert 'console_scripts' not in setup_file.read()
 
 
 @pytest.mark.parametrize('lib', ['Click', 'argparse'])
@@ -258,7 +253,7 @@ def test_bake_with_console_script_files(cookies, lib):
 
     setup_path = os.path.join(project_path, 'setup.cfg')
     with open(setup_path, 'r') as setup_file:
-        assert 'entry_points' in setup_file.read()
+        assert 'console_scripts' in setup_file.read()
 
 
 @pytest.mark.parametrize('lib', ['Click', 'argparse'])
