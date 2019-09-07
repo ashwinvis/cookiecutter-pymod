@@ -24,4 +24,4 @@ jobs:
         python -m pip install -r dev-requirements.txt
     - name: Test with tox and Python ${{ matrix.python }}
       run: |
-        python -m tox
+        python -m tox -e py
