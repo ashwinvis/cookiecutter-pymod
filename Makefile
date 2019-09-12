@@ -17,3 +17,6 @@ replay: watch
 
 %requirements.txt: %requirements.in
 	pip-compile --output-file=$@ $<
+
+pypack:
+	cookiecutter $(BAKE_OPTIONS) --overwrite-if-exists --config-file pypack.yml .

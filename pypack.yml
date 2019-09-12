@@ -1,0 +1,3 @@
+default_context:
+    project_name: "PyPack"
+    project_short_description: "A demo package to show how cookiecutter-pypack renders."

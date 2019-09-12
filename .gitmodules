@@ -1,0 +1,3 @@
+[submodule "pypack"]
+	path = pypack
+	url = git@github.com:ashwinvis/pypack.git
