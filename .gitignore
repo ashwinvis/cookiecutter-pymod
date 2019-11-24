@@ -96,3 +96,7 @@ target/
 # Cookiecutter
 output/
 python?boilerplate/
+cookicutter-pypack-env/
+
+# IDE settings
+.vscode/
