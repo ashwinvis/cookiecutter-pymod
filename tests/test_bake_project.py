@@ -265,9 +265,6 @@ def test_bake_with_console_script_cli(cookies, lib):
             spec = importlib.util.spec_from_file_location(module_name, module_path)
             cli = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(cli)
-        elif sys.version_info >= (3, 3):
-            file_loader = importlib.machinery.SourceFileLoader
-            cli = file_loader(module_name, module_path).load_module()
         else:
             cli = imp.load_source(module_name, module_path)
 
