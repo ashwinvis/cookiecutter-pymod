@@ -10,10 +10,7 @@ import pytest
 
 from click.testing import CliRunner
 
-if sys.version_info > (3, 0):
-    import importlib
-else:
-    import imp
+import importlib
 
 
 @contextmanager
