@@ -1,0 +1,55 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PIP_CACHE_DIR: ~/.cache/pip
+
+{% raw -%}
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Cache pip requirements
+      id: pip-cache
+      uses: actions/cache@v1
+      with:
+        path: ${{ env.PIP_CACHE_DIR }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.*') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Verify Python environment
+      run: |
+        pip list
+        pip cache list
+
+    - name: Install dependencies
+      run: |
+        pip install .[tests]
+
+    - name: Test with tox and Python ${{ matrix.python }}
+      run: |
+{%- endraw %}
+{%- if cookiecutter.use_pytest == 'y' %}
+        pytest -s
+{%- else %}
+        python -m unittest discover
+{%- endif %}
+
