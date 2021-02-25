@@ -107,7 +107,7 @@ html_theme_options = {
     "color_primary": "indigo",
     "color_accent": "deep-purple",
     # Set the repo location to get a badge with stats
-    "repo_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_url }}",
+    "repo_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
     "repo_name": project,
     # Visible levels of the global TOC; -1 means unlimited
     "globaltoc_depth": 1,
