@@ -3,9 +3,9 @@
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
 from warnings import warn
-{% if cookiecutter.use_pytest == 'y' -%}
+{% if cookiecutter.use_pytest == 'y' %}
 import pytest
-{% else %}
+{% else -%}
 import unittest
 {%- endif %}
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
@@ -85,9 +85,9 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
         runner = CliRunner()
         result = runner.invoke(cli.main)
         assert result.exit_code == 0
-        assert '{{ cookiecutter.project_slug }}.cli.main' in result.output
+        assert "{{ cookiecutter.project_slug }}.cli.main" in result.output
         help_result = runner.invoke(cli.main, ['--help'])
         assert help_result.exit_code == 0
-        assert '--help  Show this message and exit.' in help_result.output
+        assert "--help  Show this message and exit." in help_result.output
 {%- endif %}
 {%- endif %}
