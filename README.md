@@ -6,7 +6,7 @@
 [![Windows build status on
 Appveyor](https://ci.appveyor.com/api/projects/status/github/ashwinvis/cookiecutter-pypack?branch=master&svg=true)](https://ci.appveyor.com/project/ashwinvis/cookiecutter-pypack/branch/master)
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) template for a
+[Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for a
 **Py**thon package with some **Mod**ern twists:
 
   - Primarily uses
@@ -115,25 +115,9 @@ Don't worry, you have options:
 
 ### Similar Cookiecutter Templates
 
-  - [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage):
+  - [ionelmc/cookiecutter-pylibrary](https://github.com/ionelmc/cookiecutter-pylibrary): Another template which uses the `src/` layout
+  - [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage):
     The original cookiecutter template.
-  - [Nekroze/cookiecutter-pypackage](https://github.com/Nekroze/cookiecutter-pypackage):
-    A fork of this with a PyTest test runner, strict flake8 checking
-    with Travis/Tox, and some docs and `setup.py` differences.
-  - [tony/cookiecutter-pypackage-pythonic](https://github.com/tony/cookiecutter-pypackage-pythonic):
-    Fork with py2.7+3.3 optimizations. Flask/Werkzeug-style test runner,
-    `_compat` module and module/doc conventions. See `README.rst` or the
-    [github comparison
-    view](https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master)
-    for exhaustive list of additions and modifications.
-  - [ardydedase/cookiecutter-pypackage](https://github.com/ardydedase/cookiecutter-pypackage):
-    A fork with separate requirements files rather than a requirements
-    list in the `setup.py` file.
-  - [lgiordani/cookiecutter-pypackage](https://github.com/lgiordani/cookiecutter-pypackage):
-    A fork of Cookiecutter that uses
-    [Punch](https://github.com/lgiordani/punch) instead of
-    [Bumpversion](https://github.com/peritus/bumpversion) and with
-    separate requirements files.
   - Also see the
     [network](https://github.com/ashwinvis/cookiecutter-pypack/network)
     and [family
