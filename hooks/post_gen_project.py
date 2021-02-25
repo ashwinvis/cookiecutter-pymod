@@ -23,6 +23,7 @@ def git_init():
         os.system("git add --all")
         os.system('''git config user.email {{ cookiecutter.email|tojson }}''')
         os.system('''git config user.name {{ cookiecutter.full_name|tojson }}''')
+        os.system('''git config init.defaultBranch main''')
         os.system("git commit -m 'First commit'")
 
 
