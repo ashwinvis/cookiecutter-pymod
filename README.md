@@ -31,7 +31,7 @@ Appveyor](https://ci.appveyor.com/api/projects/status/github/ashwinvis/cookiecut
 
 ``` shell
 my-project/
-├── AUTHORS.md
+├── THANKS.md
 ├── CONTRIBUTING.md
 ├── docs
 │   └── ...

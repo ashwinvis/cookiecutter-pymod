@@ -29,8 +29,8 @@ def git_init():
 
 if __name__ == '__main__':
 
-    if '{{ cookiecutter.create_author_file }}' != 'y':
-        remove_file('AUTHORS.md')
+    if '{{ cookiecutter.create_thanks_file }}' != 'y':
+        remove_file('THANKS.md')
 
     if '{{ cookiecutter.use_pytest }}' == 'y':
         remove_file('tests/__init__.py')
