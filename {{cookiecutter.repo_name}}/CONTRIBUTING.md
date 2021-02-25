@@ -56,11 +56,12 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_name }}` for 
 
         $ git clone git@github.com:your_name_here/{{ cookiecutter.repo_name }}.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:
+3. Install your local copy into a virtual environment. This is how you set up your fork for local development:
 
-        $ mkvirtualenv {{ cookiecutter.repo_name }}
+        $ python -m venv venv
+        $ source venv/bin/activate
         $ cd {{ cookiecutter.repo_name }}/
-        $ python setup.py develop
+        $ pip install -e '.[dev]'
 
 4. Create a branch for local development:
 
@@ -68,14 +69,19 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_name }}` for 
 
     Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox:
+5. When you're done making changes, check that your changes pass the linters.
+   This is handled automatically using pre-commit. Install the pre-commit git
+   hooks as follows:
 
-        $ flake8 src/{{ cookiecutter.project_slug }} tests
-        $ python -m unittest discover or py.test
+        $ pre-commit install
+
+    To run the unit tests in your current environment:
+
+        $ pytest
+
+    You can also run the tests in a separate environment with multiple Python versions using:
+
         $ tox
-
-    To get flake8 and tox, just pip install them into your virtualenv.
 
 6. Commit your changes and push your branch to GitHub:
 
@@ -116,4 +122,12 @@ Then run:
     $ git push
     $ git push --tags
 
+{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 Travis will then deploy to PyPI if tests pass.
+{% else -%}
+To deploy:
+
+    $ make dist-check
+    $ make release
+
+{%- endif %}
