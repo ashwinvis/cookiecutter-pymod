@@ -38,6 +38,7 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
         cookie to be baked and its temporal files will be removed
     """
     result = cookies.bake(*args, **kwargs)
+    assert result.project is not None, "Cookiecutter failed to bake!"
     try:
         yield result
     finally:
@@ -74,6 +75,7 @@ def test_year_compute_in_license_file(cookies):
 
 def project_info(result):
     """Get toplevel dir, project_slug, and project dir from baked cookies"""
+    assert result.project is not None, "Cookiecutter failed to bake!"
     project_path = str(result.project)
     # repo_name is by default different from project_slug
     project_slug = os.path.split(project_path)[-1].replace('-', '_')
@@ -153,11 +155,11 @@ def test_bake_without_travis_pypi_setup(cookies):
 
 
 def test_bake_without_author_file(cookies):
-    with bake_in_temp_dir(cookies, extra_context={'create_author_file': 'n'}) as result:
+    with bake_in_temp_dir(cookies, extra_context={'create_thanks_file': 'n'}) as result:
         found_toplevel_files = [f.basename for f in result.project.listdir()]
-        assert 'AUTHORS.md' not in found_toplevel_files
+        assert 'THANKS.md' not in found_toplevel_files
         doc_files = [f.basename for f in result.project.join('docs').listdir()]
-        assert 'authors.rst' not in doc_files
+        assert 'thanks.rst' not in doc_files
 
         # Assert there are no spaces in the toc tree
         docs_index_path = result.project.join('docs/index.rst')

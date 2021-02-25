@@ -65,7 +65,7 @@ For Every Release
             pip install readme_renderer
             python setup.py check -r -s
 
-#. Edit the release on GitHub (e.g. https://github.com/audreyr/cookiecutter/releases). Paste the release notes into the release's release page, and come up with a title for the release.
+#. Edit the release on GitHub (e.g. https://github.com/cookiecutter/cookiecutter/releases). Paste the release notes into the release's release page, and come up with a title for the release.
 
 About This Checklist
 --------------------
