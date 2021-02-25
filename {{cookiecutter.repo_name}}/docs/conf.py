@@ -82,13 +82,40 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_material'
 
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 #
 # html_theme_options = {}
+
+# Material theme options (see theme.conf for more information)
+html_theme_options = {
+    # Set the name of the project to appear in the navigation.
+    "nav_title": "{{ cookiecutter.project_name }} documentation",
+    # ??
+    # "touch_icon": "",
+    # Logo to the left of the title
+    "logo_icon": "&#x1F56E",  # https://emojipedia.org/book/
+    # FIXME: Nav bar links
+    # "nav_links": [{}],
+    # Specify a base_url used to generate sitemap.xml. If not
+    # specified, then no sitemap will be built.
+    "base_url": "https://{{ cookiecutter.project_slug.replace('-', '_') }}.readthedocs.io",
+    # Set the color and the accent color
+    "color_primary": "indigo",
+    "color_accent": "deep-purple",
+    # Set the repo location to get a badge with stats
+    "repo_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_url }}",
+    "repo_name": project,
+    # Visible levels of the global TOC; -1 means unlimited
+    "globaltoc_depth": 1,
+    # If False, expand all TOC entries
+    "globaltoc_collapse": True,
+    # If True, show hidden TOC entries
+    "globaltoc_includehidden": False,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
