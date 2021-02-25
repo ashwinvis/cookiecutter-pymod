@@ -31,26 +31,36 @@ Appveyor](https://ci.appveyor.com/api/projects/status/github/ashwinvis/cookiecut
 **TLDR:** you get this:
 
 ``` shell
-my-project/
-├── THANKS.md
-├── CONTRIBUTING.md
+$ tree --dirsfirst -a pypack/
+pypack/
 ├── docs
 │   └── ...
+├── .github
+│   ├── workflows
+│   │   └── tests.yml
+│   └── ISSUE_TEMPLATE.md
+├── src
+│   └── pypack
+│       ├── cli.py
+│       ├── __init__.py
+│       └── pypack.py
+├── tests
+│   └── ...
+├── CONTRIBUTING.md
+├── .editorconfig
+├── .git
+├── .gitignore
 ├── HISTORY.md
 ├── LICENSE
 ├── Makefile
-├── MANIFEST.in
+├── .pre-commit-config.yaml
+├── pyproject.toml
 ├── README.md
 ├── setup.cfg
 ├── setup.py
-├── src
-│   └── my_project
-│       ├── cli.py
-│       ├── my_project.py
-│       └── __init__.py
-├── tests
-│   └── ...
-└── tox.ini
+├── THANKS.md
+├── tox.ini
+└── .travis.yml
 ```
 
 ## See Also
@@ -82,7 +92,7 @@ requires Cookiecutter 1.4.0 or higher):
 
 Generate a Python package project:
 
-    cookiecutter https://github.com/ashwinvis/cookiecutter-pypack.git
+    cookiecutter gh:ashwinvis/cookiecutter-pypack
 
 Then:
 
