@@ -123,6 +123,8 @@ rfc3986==1.4.0
     # via twine
 secretstorage==3.3.1
     # via keyring
+setuptools-scm==5.0.1
+    # via -r dev-requirements.in
 six==1.15.0
     # via
     #   bleach
@@ -152,6 +154,8 @@ wcwidth==0.2.5
     # via pytest
 webencodings==0.5.1
     # via bleach
+wheel==0.36.2
+    # via -r dev-requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
