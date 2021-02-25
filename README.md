@@ -7,7 +7,7 @@
 Appveyor](https://ci.appveyor.com/api/projects/status/github/ashwinvis/cookiecutter-pypack?branch=master&svg=true)](https://ci.appveyor.com/project/ashwinvis/cookiecutter-pypack/branch/master)
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for a
-**Py**thon package with some **Mod**ern twists:
+**Py**thon **pack**age with some modern twists:
 
   - Primarily uses
     [setup.cfg](https://setuptools.readthedocs.io/en/latest/setuptools.html?highlight=setup.cfg#configuring-setup-using-setup-cfg-files)
@@ -64,12 +64,10 @@ my-project/
     `py.test`
   - [Travis-CI](http://travis-ci.org/): Ready for Travis Continuous
     Integration testing
-  - [Tox](http://testrun.org/tox/) testing: Setup to easily test for
-    Python 2.7, 3.4, 3.5, 3.6
+  - [Tox](http://tox.readthedocs.io) testing: Setup to easily test for
+    Python 3.6+
   - [Sphinx](http://sphinx-doc.org/) docs: Documentation ready for
     generation with, for example, [ReadTheDocs](https://readthedocs.io/)
-  - [Bumpversion](https://github.com/peritus/bumpversion):
-    Pre-configured version bumping with a single command
   - Auto-release to [PyPI](https://pypi.python.org/pypi) when you push a
     new tag to master (optional)
   - Command line interface using Click (optional)

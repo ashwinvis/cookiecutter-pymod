@@ -112,7 +112,7 @@ A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.md).
 Then run:
 
-    $ bumpversion patch # possible: major / minor / patch
+    $ git tag <insert version>
     $ git push
     $ git push --tags
 
